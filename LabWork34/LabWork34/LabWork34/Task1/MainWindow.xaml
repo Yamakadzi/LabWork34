@@ -1,0 +1,96 @@
+﻿<Window x:Class="Task1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+         Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="369*"/>
+            <ColumnDefinition Width="21*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23*"/>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="367*"/>
+            <RowDefinition Height="30*"/>
+        </Grid.RowDefinitions>
+        <Menu Height="Auto" VerticalAlignment="Top" Grid.ColumnSpan="3" >
+            <MenuItem Header="Файл">
+                <MenuItem Header="Создать" >
+                    <MenuItem.Icon>
+                        <Image Source = "D:\Visual Studio\LabWork34\LabWork34\LabWork34\1.bmp"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Новое окно" ></MenuItem>
+                <MenuItem Header="Открыть"></MenuItem>
+                <MenuItem Header="Сохранить" >
+                    <MenuItem.Icon>
+                        <Image Source = "D:\Visual Studio\LabWork34\LabWork34\LabWork34\1.bmp" ></Image>
+                    </MenuItem.Icon> 
+                </MenuItem>
+                <MenuItem Header="Сохраниь как" ></MenuItem>
+                <MenuItem Header="Параметры страницы" ></MenuItem>
+                <MenuItem Header="Печать"></MenuItem>
+                <MenuItem Header="Выход" Click="Exit_Click" >
+                    <MenuItem.Icon>
+                        <Image Source = "D:\Visual Studio\LabWork34\LabWork34\LabWork34\1.bmp" > </Image>
+                    </MenuItem.Icon> 
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Формат">
+                <MenuItem Header="Перенос по словам" IsCheckable="True" IsChecked="True"></MenuItem>
+                <MenuItem Header="Шрифт" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Вид">
+                <MenuItem Header="Масштаб" >
+                    <MenuItem Header="Увеличить"></MenuItem>
+                    <MenuItem Header="Уменьшить" ></MenuItem>
+                    <MenuItem Header="Востановить масштаб по умолчанию"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Строка состояния" IsCheckable="True" IsChecked="False" Checked="StatusBarItem_Checked" Unchecked="StatusBarItem_Unchecked" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Справка">
+                <MenuItem Header="Просмотреть справку" ></MenuItem>
+                <MenuItem Header="Отправить отзыв" ></MenuItem>
+                <MenuItem Header="О программе" Click="Info_Click" ></MenuItem>
+            </MenuItem>
+        </Menu>
+        <StatusBar x:Name="statusBar" Visibility="Hidden"  VerticalAlignment="Bottom" Grid.Row="4" Grid.ColumnSpan="3"  >
+            <TextBlock x:Name="DataTextBlock" ></TextBlock>
+        </StatusBar>
+        <TextBox x:Name="textBox" Grid.RowSpan="5" Margin="0,23,0,30" >
+            <TextBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Очистить"></MenuItem>
+                    <MenuItem Header="Открыть"></MenuItem>
+                    <MenuItem Header="Сохранить"></MenuItem>
+                    <MenuItem Header="Выход" Click="Exit_Click"></MenuItem>
+                </ContextMenu>
+            </TextBox.ContextMenu>
+        </TextBox>
+        <StackPanel Margin="2,1,0,1" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3">
+            <Button Margin="0,47,0,-4" Height="37" Width="43">
+                <Image Source="D:\Visual Studio\LabWork34\LabWork34\LabWork34\Безымянный.png" Height="37" Width="41"/>
+            </Button>
+            <Button Margin="0,47,0,-4" Height="37" Width="43">
+                <Image Source="D:\Visual Studio\LabWork34\LabWork34\LabWork34\Безымянный2.png" Height="37" Width="41"/>
+            </Button>
+            <Button Margin="0,47,0,-4" Height="37" Width="43">
+                <Image Source="D:\Visual Studio\LabWork34\LabWork34\LabWork34\Безымянный1.png" Height="43" Width="41" />
+            </Button>
+            <Label x:Name="StackPanelLabel" Content="Home" Width="58" Margin="1,-282,0,0" Height="22" FontSize="11"/>
+            <Label x:Name="StackPanelLabel2" Content="Sent" Width="54" Margin="1,-112,0,0" FontSize="11" Height="27" RenderTransformOrigin="0.855,0.505"/>
+            <Label x:Name="StackPanelLabel3" Content="Settings" Width="57" Margin="1,2,0,0" FontSize="11" Height="26"/>
+        </StackPanel>
+        <ToggleButton x:Name="button" Margin="0,23,0,10" Click="StackPanelButton_Click"  Grid.Column="2" Grid.RowSpan="3">
+            <Image Source="D:\Visual Studio\LabWork34\LabWork34\LabWork34\БезымянныйQ.png" Height="10" />
+        </ToggleButton>
+    </Grid>
+</Window>
